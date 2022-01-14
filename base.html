@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main35.css') }}">
+		<meta charset="utf-8">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;500&display=swap" rel="stylesheet">
+		<title>Educatics</title>
+	</head>
+	<body>
+		<div class="icon">
+			{% if current_user.is_authenticated %}
+			<h2>{{ current_user.name }}</h2>
+			{% endif %}
+		</div>
+		<div class='name_of_the_site'>
+			<h1>EDUCATICS</h1>
+		</div>
+		<div class="base">
+			<p>Educatics - школа программирования для учеников 5-6 классов, обущающая основам языка python.</p>
+			{% if current_user.is_authenticated %}
+			<br>
+			<a class="btn btn-primary " href="/logout">Выйти из аккаунта</a>
+			<a class="btn btn-primary " href="/lessons">Уроки</a>
+			{% else %}
+			<a class="btn btn-primary " href="/register">Зарегистрироваться</a>
+			<a class="btn btn-primary" href="/login">Войти</a>
+			{% endif %}
+		</div>
+	
+        <!-- Begin page content -->
+	<main role="main" class="container">
+ 		{% block content %}{% endblock %}
+	</main>
+	</body>
+</html>
