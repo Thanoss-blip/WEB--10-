@@ -33,6 +33,10 @@ def lessons():
 def lesson_1():
     return render_template('lesson_1.html')
 
+@app.route('/lessons/lesson_2')
+def lesson_2():
+    return render_template('lesson_2.html')
+
     
 @app.route('/register', methods=['GET', 'POST'])
 def register():
