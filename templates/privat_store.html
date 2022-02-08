@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+	<br>
+	<div class="main">
+		<h1>Личный кабинет пользователя {{ current_user.name }}</h1>
+        <h3>Результаты прохождения тестов по урокам курса:</h3>
+        <ol>
+            <li>
+                {% if current_user.test_1 < 7 %} 
+                    <strong>Тест №1:</strong> "Ввод и вывод информации": набрано (за последнюю попытку) {{ current_user.test_1}}/7
+                    <br><br>
+                    <a class="btn btn-active " href="/test_input_output">Начать тестирование</a>
+                {% elif current_user.test_1 == 7 %}
+                    <strong>Тест №1:</strong> "Ввод и вывод информации": набрано (за последнюю попытку) {{ current_user.test_1}}/7
+                    <br> У вас максимальный результат! Так держать!
+                {% endif %}
+            </li><br><br>
+            <li>
+                {% if current_user.test_2 < 6 %} 
+                    <strong>Тест №2:</strong> "Простые типы данных: числа": набрано (за последнюю попытку) {{ current_user.test_2}}/6
+                    <br><br>
+                    <a class="btn btn-active " href="/test_numbers">Начать тестирование</a>
+                {% elif current_user.test_2 == 6 %}
+                    <strong>Тест №2:</strong> "Простые типы данных: числа": набрано (за последнюю попытку) {{ current_user.test_2}}/6
+                    <br> У вас максимальный результат! Так держать!
+                {% endif %}
+            </li><br><br>
+            <li>
+                {% if current_user.test_3 < 6 %} 
+                    <strong>Тест №3:</strong> "Простые типы данных: строки": набрано (за последнюю попытку) {{ current_user.test_3}}/6
+                    <br><br>
+                    <a class="btn btn-active " href="/test_strings">Начать тестирование</a>
+                {% elif current_user.test_3 == 6 %}
+                    <strong>Тест №3:</strong> "Простые типы данных: строки": набрано (за последнюю попытку) {{ current_user.test_3}}/6
+                    <br> У вас максимальный результат! Так держать!
+                {% endif %}
+            </li>
+        </ol>
+	</div>
+{% endblock %}

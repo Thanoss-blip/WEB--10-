@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+    <div class="main">
+        <h1>Чему можно научиться в Educatics?</h1>
+        <p class="lesson">
+            Здесь вы можете научиться основам программирования, если пройдёте курс из уроков и будете добросовестно
+            выполнять тесты. Вы обучитесь вводу и выводу, простым типам данных, условиям и циклам на языке программирования python.
+            Почему именно python? Одним из главных преимуществ python является простота его освоения. Чтобы изучать язык, 
+            вам не нужно знать программирование: достаточно понимания основ математики. Этот язык программирования подходит
+            для возрастной категории 5-6 классов. Так что, если хотите научиться программировать - вы пришли по адресу) <br>
+            Что можно сделать, зная python? Очень много всего. <br> Это могут быть:
+        </p>
+
+        <p class="lesson"> - простые игры (на изображении игра-арканоид, она занимает примерно 700 строк кода)</p>
+        <img class="lesson_images" src="{{ url_for('static', filename='images/arkanoid.jpg') }}" width=70% height=70%>
+
+        <p class="lesson"> - небольшие приложения (на изображении приложение-синтезатор, он занимает примерно 400 строк кода)</p>
+        <img class="lesson_images" src="{{ url_for('static', filename='images/piano.jpg') }}" width=70% height=70%>
+
+        <p class="lesson"> Даже это web-приложение написано с помощью python</p>
+
+        <h1>Как начать программировать на python?</h1>
+        <p class="lesson">
+            Это очень просто. Следуте инструкции:
+        </p>
+        <ol>
+            <li>Зайдите на официальный сайт python.org и откроете раздел Downloads. Скачайте самую
+                последнюю версию python для вашей операционной системы.
+            </li>
+            <li>
+                Чтобы запустить встроенную IDE, введите во встроенном поисковом устройстве компьютера "IDLE" и
+                откройте соответствующий файл. Вы готовы к написанию программы!
+            </li>
+            <li>
+                Чтобы запустить вашу программу, найдите вкладку <i>Run</i> -> <i>Run Module</i> ИЛИ 
+                нажмите клавишу <strong>F5</strong>.
+            </li>
+        </ol>
+    </div>
+    <div class="menu">
+		<p>Полезные ссылки для более углубленного изучения языка рограммирования python и его библиотек</p>
+		<a class="btn-menu " href="https://pythonworld.ru/samouchitel-python">Самоучитель python</a>
+		<a class="btn-menu " href="https://habr.com/ru/post/29778/">Основы python в кратком изложении</a>
+		<a class="btn-menu " href="https://medium.com/nuances-of-programming/%D0%BF%D0%BE%D0%BF%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D1%8B%D0%B5-%D0%BB%D0%B0%D0%B9%D1%84%D1%85%D0%B0%D0%BA%D0%B8-%D0%B4%D0%BB%D1%8F-python-a61dd5ff3c7">Популярные лайфхаки для python</a>
+        <a class="btn-menu " href="https://pythonru.com/uroki/obuchenie-python-gui-uroki-po-tkinter">Создание своего первого графического интерфейса с помощью python библиотеки tkinter</a>
+		<a class="btn-menu " href="https://pythonru.com/uroki/biblioteka-pygame-chast-1-vvedenie">Введение в создание игр с помощью python библиотеки pygame</a>
+	</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<div class="main">
+	<h1>Тест №2: простые типы данных: числа в python</h1>
+	<form action="" method="post">
+		{{ form.hidden_tag() }}
+		<h3>{{ form.q1.label }}</h3>
+		{{ form.q1 }}
+		<br>
+		<h3>Какие типы ЧИСЕЛ есть в python?</h3>
+            <ol>
+			<li>{{ form.bool1 }} {{ form.bool1.label }}</li>
+            <li>{{ form.bool2 }} {{ form.bool2.label }}</li>
+            <li>{{ form.bool3 }} {{ form.bool3.label }}</li>
+            <li>{{ form.bool4 }} {{ form.bool4.label }}</li>
+            <li>{{ form.bool5 }} {{ form.bool5.label }}</li>
+            <li>{{ form.bool6 }} {{ form.bool6.label }}</li>
+        </ol>
+		<h3>{{ form.q3.label }}</h3>
+			{{ form.q3(class="text") }}
+        <br><br>
+        <h3>{{ form.q4.label }}</h3>
+            {{ form.q4 }}<br><br>
+        <h3>{{ form.q5.label }}</h3>
+			{{ form.q5(class="text") }}<br><br>
+		{{ form.submit(type="submit", class="btn btn-active") }}
+	</form>
+</div>
+{% endblock %}
