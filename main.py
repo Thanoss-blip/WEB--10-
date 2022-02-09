@@ -64,7 +64,10 @@ def register():
                                    message="Такой пользователь уже есть")
         user = User(
         name=form.name.data,
-        email=form.email.data
+        email=form.email.data,
+        test_1=0,
+        test_2=0,
+        test_3=0
          )
         user.set_password(form.password.data)
         db_sess.add(user)
