@@ -15,6 +15,12 @@ class User(SqlAlchemyBase, UserMixin):
     hashed_password = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     created_date = sqlalchemy.Column(sqlalchemy.DateTime,
                                      default=datetime.datetime.now)
+    test_1 = sqlalchemy.Column(sqlalchemy.Integer,
+                           default=0)
+    test_2 = sqlalchemy.Column(sqlalchemy.Integer,
+                           default=0)
+    test_3 = sqlalchemy.Column(sqlalchemy.Integer,
+                           default=0)
     def set_password(self, password):
         self.hashed_password = generate_password_hash(password)
     def check_password(self, password):
