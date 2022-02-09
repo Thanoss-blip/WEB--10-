@@ -4,6 +4,7 @@ from data.users import User
 from forms.user import RegisterForm, LoginForm, TestInputOutput, TestNumbers, TestStrings
 from flask import render_template, redirect, session
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
+import os
 
 
 app = Flask(__name__)
