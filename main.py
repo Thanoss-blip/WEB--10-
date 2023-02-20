@@ -1,10 +1,9 @@
 from flask import Flask
 from data import db_session
 from data.users import User
-from forms.user import RegisterForm, LoginForm, TestInputOutput, TestNumbers, TestStrings
+from forms.user import RegisterForm, LoginForm, TestInputOutput, TestNumbers, TestStrings, TestIf
 from flask import render_template, redirect, session
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
-import os
 
 
 app = Flask(__name__)
@@ -43,6 +42,11 @@ def lesson_2():
 def lesson_3():
     return render_template('lesson_3.html')
 
+@app.route('/lessons/lesson_4')
+@login_required
+def lesson_4():
+    return render_template('lesson_4.html')
+
 @app.route('/privat_store')
 @login_required
 def privat_store():
@@ -64,10 +68,7 @@ def register():
                                    message="Такой пользователь уже есть")
         user = User(
         name=form.name.data,
-        email=form.email.data,
-        test_1=0,
-        test_2=0,
-        test_3=0
+        email=form.email.data
          )
         user.set_password(form.password.data)
         db_sess.add(user)
@@ -149,6 +150,27 @@ def test_strings():
         db_sess.commit()
         return redirect('/privat_store')
     return render_template('test_strings.html', title='Тетст на простые типы данных: строки', form=form)
+
+
+@app.route('/test_if', methods=['GET', 'POST'])
+@login_required
+def test_if():
+    total = 0
+    form = TestIf()
+    if form.validate_on_submit():
+        user_answers = list(form.data.values())
+        user_answers = user_answers[:-2]
+        for i in range(len(form.answers)):
+            if user_answers[i] == form.answers[i] and form.answers[i] != False:
+                total += 1
+        db_sess = db_session.create_session()
+        current_user.test_4 = total
+        db_sess.merge(current_user)
+
+        db_sess.commit()
+        return redirect('/privat_store')
+    return render_template('test_if.html', title='Тетст на условные конструкции', form=form)
+
 
 
 @app.route('/logout')
