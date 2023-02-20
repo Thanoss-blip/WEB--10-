@@ -21,6 +21,8 @@ class User(SqlAlchemyBase, UserMixin):
                            default=0)
     test_3 = sqlalchemy.Column(sqlalchemy.Integer,
                            default=0)
+    test_4 = sqlalchemy.Column(sqlalchemy.Integer,
+                           default=0)
     def set_password(self, password):
         self.hashed_password = generate_password_hash(password)
     def check_password(self, password):
