@@ -34,6 +34,16 @@
                     <strong>Тест №3:</strong> "Простые типы данных: строки": набрано (за последнюю попытку) {{ current_user.test_3}}/6
                     <br> У вас максимальный результат! Так держать!
                 {% endif %}
+            </li><br><br>
+            <li>
+                {% if current_user.test_4 < 5 %} 
+                    <strong>Тест №4:</strong> "Условия": набрано (за последнюю попытку) {{ current_user.test_4}}/5
+                    <br><br>
+                    <a class="btn btn-active " href="/test_if">Начать тестирование</a>
+                {% elif current_user.test_4 == 5 %}
+                    <strong>Тест №4:</strong> "Условия": набрано (за последнюю попытку) {{ current_user.test_4}}/5
+                    <br> У вас максимальный результат! Так держать!
+                {% endif %}
             </li>
         </ol>
 	</div>
