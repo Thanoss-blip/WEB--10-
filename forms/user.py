@@ -81,4 +81,22 @@ class TestStrings(FlaskForm):
 
     submit = SubmitField('Отправить', render_kw={'class': 'log_in_btn'})
     answers = ['str', '0', ':2:', 'Используя срез [::-1]', False, False, False, True, False, True, False]
+class TestIf(FlaskForm):
+    q1 = StringField(label='Определите значение переменной «a» после выполнения фрагмента программы:',
+                     render_kw={'class': 'mail_input_field',
+                                'style': 'line-height: 2em'})
+    q2 = StringField(label='Определите значение переменной «a» после выполнения фрагмента программы:',
+                     render_kw={'class': 'mail_input_field',
+                                'style': 'line-height: 2em'})
+    q3 = StringField(label='Определите значение переменной «a» после выполнения фрагмента программы:',
+                     render_kw={'class': 'mail_input_field',
+                                'style': 'line-height: 2em'})
+    q4 = StringField(label='Определите значение переменной «a» после выполнения фрагмента программы:',
+                     render_kw={'class': 'mail_input_field',
+                                'style': 'line-height: 2em'})
+    q5 = StringField(label='Определите значение переменной «a» после выполнения фрагмента программы:',
+                     render_kw={'class': 'mail_input_field',
+                                'style': 'line-height: 2em'})
     
+    submit = SubmitField('Отправить', render_kw={'class': 'log_in_btn'})
+    answers = ['10', '12', '22', '15', '34']
