@@ -182,5 +182,6 @@ def logout():
 
 if __name__ == '__main__':
     db_session.global_init("db/blogs.db")
-    app.run()
+    port = int(os.environ.get("PORT", 5050))
+    app.run(host='thanoss-web-10.herokuapp.com', port=port, debug=True)
 
